@@ -1,3 +1,20 @@
+#region VEXcode Generated Robot Configuration
+import math
+import random
+from vexcode import *
+
+drivetrain = Drivetrain()
+magnet = Electromagnet("magnet", 0)
+pen = Pen()
+brain = Brain()
+left_bumper = Bumper("leftBumper", 1)
+right_bumper = Bumper("rightBumper", 2)
+distance = Distance()
+front_eye = EyeSensor("fronteye", 3)
+down_eye = EyeSensor("downeye", 4)
+location = Location()
+
+#endregion VEXcode Generated Robot Configuration
 
 # Library imports
 from math import *
@@ -78,12 +95,18 @@ def driveYDistance(setpoint,duration):
 def driveUsingDistanceSensor(setpoint,duration):
     # reset the timer
     brain.timer_reset()
+    drivetrain.set_rotation(0, DEGREES)
 
     # loop while the timer is less than the duration input of the function.
     while(brain.timer_time(SECONDS)<duration):
         # Your code goes here!
         
-
+        if(distance.get_distance(MM)>200):
+            drivetrain.drive(FORWARD)
+        elif(distance.get_distance(MM)<200):
+            drivetrain.drive(REVERSE)
+        else:
+            drivetrain.stop()
 
 
 
