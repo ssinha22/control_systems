@@ -31,7 +31,7 @@ rvr.set_all_leds(0,0,0)
 #Set control parameters
 setpoint = 100.0
 k = 3
-MAX_SPEED = 100
+MAX_SPEED = 255
 
 while True:
     try:
