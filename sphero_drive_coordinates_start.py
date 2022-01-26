@@ -29,10 +29,13 @@ PI = 3.14159
 
 # Write your code here to get the RVR to move in an equilateral triangle of 1 meters per side.
 
-drive_to_position_si(PI_OVER_3,0,0,SPEED) 
-drive_to_position_si(PI_OVER_3,1,1,SPEED)
-drive_to_position_si(PI_OVER_3,2,0,SPEED)
-drive_to_position_si(PI_OVER_3,0,0,SPEED)
+rvr.drive_to_position_si(PI_OVER_3,0,0,SPEED) 
+time.sleep(0.1)
+rvr.drive_to_position_si(PI_OVER_3,1,1,SPEED)
+time.sleep(0.1)
+rvr.drive_to_position_si(PI_OVER_3,2,0,SPEED)
+time.sleep(0.1)
+rvr.drive_to_position_si(PI_OVER_3,0,0,SPEED)
 
 
 time.sleep(3.0) # Wait three seconds after each drive command before sending the next one.
