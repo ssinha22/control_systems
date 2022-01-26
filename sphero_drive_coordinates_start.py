@@ -28,14 +28,11 @@ PI = 3.14159
 # and then rotate to an angle of PI_OVER_3 (60 degrees).
 
 # Write your code here to get the RVR to move in an equilateral triangle of 1 meters per side.
+ 
 
-rvr.drive_to_position_si(PI_OVER_3,0,0,SPEED) 
-time.sleep(0.1)
-rvr.drive_to_position_si(PI_OVER_3,1,1,SPEED)
-time.sleep(0.1)
+rvr.drive_to_position_si(PI_OVER_3,1,1.732,SPEED)
+time.sleep(3.0)
 rvr.drive_to_position_si(PI_OVER_3,2,0,SPEED)
-time.sleep(0.1)
+time.sleep(3.0)
 rvr.drive_to_position_si(PI_OVER_3,0,0,SPEED)
-
-
 time.sleep(3.0) # Wait three seconds after each drive command before sending the next one.
