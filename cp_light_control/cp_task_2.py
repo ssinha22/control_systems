@@ -1,15 +1,12 @@
 import time
 import board
-from analogio import AnalogIn
+from analogio import AnalogOut
 
-analog_in = AnalogIn(board.d2)
+analog_out = AnalogOut(board.A0)
 
-analog_in.value = 0
 
-def getValue(pin):
-  return 255*(pin.value/65536)
-
-value = 0
-for(value<255):
-  analog_in.value += 100
-  value = getValue(analog_in)
+while True:
+    # Count up from 0 to 65535, with 64 increment
+    # which ends up corresponding to the DAC's 10-bit range
+    for i in range(6553):
+        analog_out.value = i*10
